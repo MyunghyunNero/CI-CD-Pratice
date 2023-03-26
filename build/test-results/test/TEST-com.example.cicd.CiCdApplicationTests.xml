@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.cicd.CiCdApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-21T07:07:24" hostname="gimmyeonghyeon-ui-MacBookAir.local" time="0.437">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.example.cicd.CiCdApplicationTests" time="0.437"/>
+  <system-out><![CDATA[16:07:21.952 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [CiCdApplicationTests]: using SpringBootContextLoader
+16:07:21.961 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.example.cicd.CiCdApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:07:21.962 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.cicd.CiCdApplicationTests]: CiCdApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:07:21.994 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [CiCdApplicationTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
+16:07:22.099 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/myunghyunnero/CI-CD-Pratice/CI-CD/build/classes/java/main/com/example/cicd/CiCdApplication.class]
+16:07:22.103 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.cicd.CiCdApplication for test class com.example.cicd.CiCdApplicationTests
+16:07:22.186 [Test worker] DEBUG org.springframework.test.context.util.TestContextSpringFactoriesUtils - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+16:07:22.188 [Test worker] DEBUG org.springframework.test.context.util.TestContextSpringFactoriesUtils - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+16:07:22.191 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [CiCdApplicationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+16:07:22.192 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [CiCdApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.4)
+
+2023-03-21T16:07:22.599+09:00  INFO 77872 --- [    Test worker] com.example.cicd.CiCdApplicationTests    : Starting CiCdApplicationTests using Java 17.0.5 with PID 77872 (started by myunghyunnero in /Users/myunghyunnero/CI-CD-Pratice/CI-CD)
+2023-03-21T16:07:22.602+09:00  INFO 77872 --- [    Test worker] com.example.cicd.CiCdApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2023-03-21T16:07:24.456+09:00  INFO 77872 --- [    Test worker] com.example.cicd.CiCdApplicationTests    : Started CiCdApplicationTests in 2.213 seconds (process running for 3.687)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
