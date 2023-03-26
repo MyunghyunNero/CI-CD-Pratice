@@ -38,3 +38,13 @@ jobs:
       with:
         username: ${{secrets.DOCKERHUB_USERNAME}}
         password: ${{secrets.DOCKERHUB_TOKEN}}
+
+    - name: Build and Push a Main Docker Image
+      uses: docker/build-push-action@v3
+      with:
+        context: .
+        platforms: linux/amd64,linux/arm64
+        push: true
+        tags: myunghyunnero/cicdtest:latest
+        cache-from: type=gha,scope=build-main
+        cache-to: type=gha,mode=max,scope=build-main
