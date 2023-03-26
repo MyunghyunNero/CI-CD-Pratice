@@ -42,7 +42,5 @@ jobs:
     - name: Build and Push a Main Docker Image
       uses: docker/build-push-action@v3
       with:
-        context: .
-        platforms: linux/amd64,linux/arm64
         push: true
         tags: myunghyunnero/cicdtest:latest
