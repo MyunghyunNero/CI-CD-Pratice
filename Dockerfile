@@ -1,6 +1,6 @@
 # JDK17 이미지 사용
 FROM openjdk:17-jdk
-EXPOSE 8080
+EXPOSE 8081
 
 # JAR_FILE 변수에 값을 저장
 ARG JAR_FILE=./build/libs/CI-CD-0.0.1-SNAPSHOT.jar
