@@ -44,3 +44,35 @@ jobs:
       with:
         push: true
         tags: myunghyunnero/cicdtest:latest
+
+    - name: Setup Docker Compose Production Configuration
+      run: |
+        mkdir .deploy
+        cp docker-compose-prod.yml .deploys/
+    - name: Deploy Main Docker Compose Production Configuration
+      uses: easingthemes/ssh-deploy@v2
+      env:
+        REMOTE_HOST: ${{ secrets.REMOTE_SSH_HOST }}
+        REMOTE_PORT: ${{ secrets.REMOTE_SSH_PORT }}
+        REMOTE_USER: ${{ secrets.REMOTE_SSH_USERNAME }}
+        SSH_PRIVATE_KEY: ${{ secrets.REMOTE_SSH_KEY }}
+        SOURCE: .deploys/
+        ARGS: -avz --delete
+        TARGET: ${{ secrets.REMOTE_TARGET }}
+
+    - name: Run Main Docker
+      uses: appleboy/ssh-action@master
+      env:
+        TARGET: ${{ secrets.REMOTE_TARGET }}
+      with:
+        host: ${{ secrets.REMOTE_SSH_HOST }}
+        port: ${{ secrets.REMOTE_SSH_PORT }}
+        username: ${{ secrets.REMOTE_SSH_USERNAME }}
+        key: ${{ secrets.REMOTE_SSH_KEY }}
+        envs: TARGET
+        script_stop: true
+        script: |
+          cd $TARGET
+          docker compose -f docker-compose-production.yml pull
+          docker compose -f docker-compose-production.yml up -d test
+          docker image prune -af
