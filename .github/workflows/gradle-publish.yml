@@ -47,7 +47,7 @@ jobs:
 
     - name: Setup Docker Compose Production Configuration
       run: |
-        mkdir .deploy
+        mkdir .deploys
         cp docker-compose-prod.yml .deploys/
     - name: Deploy Main Docker Compose Production Configuration
       uses: easingthemes/ssh-deploy@v2
