@@ -43,7 +43,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: myunghyunnero/cicdtest:latest
+        tags: myunghyunnero/test:latest
 
     - name: copy file via ssh password
       uses: appleboy/scp-action@master
