@@ -1,4 +1,4 @@
-package src.main.java.com.example.cicd;
+package com.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
