@@ -44,6 +44,8 @@ jobs:
       with:
         push: true
         tags: myunghyunnero/test:latest
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
 
     - name: copy file via ssh password
       uses: appleboy/scp-action@master
