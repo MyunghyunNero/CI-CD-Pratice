@@ -73,5 +73,5 @@ jobs:
         script: |
           cd $TARGET
           docker compose -f docker-compose-prod.yml pull
-          docker compose -f docker-compose-prod.yml up -d test
+          docker compose -f docker-compose-prod.yml up
           docker image prune -af
