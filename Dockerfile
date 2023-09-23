@@ -1,12 +1,23 @@
-# JDK17 이미지 사용
-FROM openjdk:17-jdk
-EXPOSE 8081
+# Build stage
+FROM openjdk:11 AS builder
+WORKDIR /gradle
+COPY gradlew build.gradle settings.gradle ./
+COPY gradle/ gradle/
+# 의존성 패키지만 빌드해서 캐싱 적용
+RUN ./gradlew build || return 0
 
-# JAR_FILE 변수에 값을 저장
-ARG JAR_FILE=./build/libs/CI-CD-0.0.1-SNAPSHOT.jar
+#모든 파일 도커로 옮김
+COPY . .
 
-# 변수에 저장된 것을 컨테이너 실행시 이름을 app.jar파일로 변경하여 컨테이너에 저장
-COPY ${JAR_FILE} app.jar
+# gradlew build 실행해서 모든 파일 빌드 -> 여기서 의존성 패키지는 캐싱되므로 바뀐 부분만 빌드
+RUN ["./gradlew", "clean", "build", "--no-daemon"]
 
-# 빌드된 이미지가 run될 때 실행할 명령어
-ENTRYPOINT ["java","-jar","app.jar"]
+
+# Run stage
+FROM openjdk:11
+EXPOSE 8080
+WORKDIR /app
+COPY --from=builder /gradle/build/libs/*.jar ./app.jar   #gradle밑에 있는 실행파일 롬ㄱ미
+
+# 이미지 실행하면 기본으로 실행되는 명령어
+CMD ["java", "-jar", "app.jar"]
