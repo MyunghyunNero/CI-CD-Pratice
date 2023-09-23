@@ -68,6 +68,6 @@ jobs:
         script_stop: true
         script: |
           cd $TARGET
-          docker compose -f docker-compose-production.yml pull
-          docker compose -f docker-compose-production.yml up -d test
+          docker compose -f docker-compose-prod.yml pull
+          docker compose -f docker-compose-prod.yml up -d test
           docker image prune -af
