@@ -17,7 +17,7 @@ RUN ["./gradlew", "clean", "build", "--no-daemon"]
 FROM openjdk:11
 EXPOSE 8080
 WORKDIR /app
-COPY --from=builder /gradle/build/libs/*.jar ./app.jar   #gradle밑에 있는 실행파일 롬ㄱ미
+COPY --from=builder /gradle/build/libs/*.jar ./app.jar
 
 # 이미지 실행하면 기본으로 실행되는 명령어
 CMD ["java", "-jar", "app.jar"]

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.cicd.CiCdApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-26T11:08:27" hostname="gimmyeonghyeon-ui-MacBookAir.local" time="0.068">
+<testsuite name="com.example.cicd.CiCdApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-23T16:23:39" hostname="gimmyeonghyeon-ui-MacBookAir.local" time="0.067">
   <properties/>
-  <testcase name="contextLoads()" classname="com.example.cicd.CiCdApplicationTests" time="0.068"/>
+  <testcase name="contextLoads()" classname="com.example.cicd.CiCdApplicationTests" time="0.067"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
