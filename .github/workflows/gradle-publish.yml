@@ -58,21 +58,16 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.REMOTE_SSH_KEY }}
         SOURCE: .deploys/
         ARGS: -avz --delete
-        TARGET: /apps
 
     - name: Run Main Docker
       uses: appleboy/ssh-action@master
-      env:
-        TARGET: /apps
       with:
         host: ${{ secrets.REMOTE_SSH_HOST }}
         port: ${{ secrets.REMOTE_SSH_PORT }}
         username: ${{ secrets.REMOTE_SSH_USERNAME }}
         key: ${{ secrets.REMOTE_SSH_KEY }}
-        envs: TARGET
         script_stop: true
         script: |
-          cd $TARGET
           docker compose -f docker-compose-production.yml pull
           docker compose -f docker-compose-production.yml up -d test
           docker image prune -af
