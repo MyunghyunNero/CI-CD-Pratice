@@ -58,12 +58,12 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.REMOTE_SSH_KEY }}
         SOURCE: .deploys/
         ARGS: -avz --delete
-        TARGET: ${{ secrets.REMOTE_TARGET }}
+        TARGET: /app
 
     - name: Run Main Docker
       uses: appleboy/ssh-action@master
       env:
-        TARGET: ${{ secrets.REMOTE_TARGET }}
+        TARGET: /app
       with:
         host: ${{ secrets.REMOTE_SSH_HOST }}
         port: ${{ secrets.REMOTE_SSH_PORT }}
