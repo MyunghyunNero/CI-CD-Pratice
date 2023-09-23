@@ -52,7 +52,7 @@ jobs:
         username: ${{ secrets.REMOTE_SSH_USERNAME }}
         key: ${{ secrets.REMOTE_SSH_KEY }}
         port: ${{ secrets.REMOTE_SSH_PORT }}
-        source: "docker-compose-prod.yaml"
+        source: "docker-compose-prod.yml"
         target: "/app"
 
     - name: Run Main Docker
